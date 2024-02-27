@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .div.background {
+            background-image: url("../views/foto/space.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #fff;
+            min-height: 100vh; /* На весь экран */
+        }
+        body {
+            background-image: url("/views/foto/space.jpg");
+            background-size: cover;
+        }
+        
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .card-block {
+            min-height: 250px;
+            color: #333; /* Set text color for card blocks */
+        }
+        
+        form {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            /* Уменьшаем отступы внутри footer */
+            width: 100%;
+            position: relative;
+            /* Позиционирование footer как обычного блока */
+            clear: both;
+            /* Очищаем float элементов перед footer */
+            bottom: 0;
+            /* Помещаем footer внизу страницы */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/asteroids">Asteroids info</a></li>
+                <li><a href="/apod">NASA</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/adminpanel">Admin Panel</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <% images.forEach((image, index) => { %>
+            <div class="carousel-item <% if (index === 0) { %> active <% } %>">
+                <img class="d-block w-100" src="<%= image.imageUrl %>" alt="Slide <%= index + 1 %>">
+                <div class="carousel-caption d-none d-md-block">
+                    <p><%= image.description %></p>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <footer>Aidana Ibrayeva SE-2203</footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

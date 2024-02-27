@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Image of the Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding-bottom: 50px; /* Добавленное пространство внизу страницы для footer */
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            color: #fff;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 40px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .date-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .date-container label {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .date-container input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+        .date-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #1a1a1a;
+            color: #fff;
+            cursor: pointer;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid #ccc;
+            margin: 20px 0;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .image-container img {
+            max-width: 80%; /* Уменьшаем ширину изображения для лучшего визуального воздействия */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: block; /* Центрируем изображение */
+            margin: 0 auto; /* Центрируем изображение */
+        }
+        .image-container p {
+            color: #333; /* Цвет текста темнее */
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify; /* Выравниваем текст по ширине */
+            padding: 0 20px; /* Добавляем отступы справа и слева */
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px; /* Уменьшаем отступы внутри footer */
+            width: 100%;
+            position: relative; /* Позиционирование footer как обычного блока */
+            clear: both; /* Очищаем float элементов перед footer */
+            bottom: 0; /* Помещаем footer внизу страницы */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/asteroids">Asteroids info</a></li>
+                <li><a href="/apod">NASA</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/adminpanel">Admin Panel</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>NASA Image of the Day</h1>
+    <form action="/apod" method="GET">
+        <div class="date-container">
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <hr>
+    <div class="image-container">
+        <% if (typeof image !== 'undefined') { %>
+            <h2><%= image.title %></h2>
+            <img src="<%= image.url %>" alt="NASA Image">
+            <p><%= image.explanation %></p>
+        <% } else { %>
+            <p>No image available for the selected date.</p>
+        <% } %>
+    </div>
+
+    <footer>
+        <p>Aidana Ibrayeva SE-2203</p>
+    </footer>
+</body>
+</html>

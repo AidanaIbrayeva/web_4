@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding-bottom: 50px; /* Добавленное пространство внизу страницы для footer */
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            color: #fff;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .profile-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+        .profile-info label {
+            font-weight: bold;
+        }
+        .profile-info p {
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px; /* Уменьшаем отступы внутри footer */
+            width: 100%;
+            position: relative; /* Позиционирование footer как обычного блока */
+            clear: both; /* Очищаем float элементов перед footer */
+            bottom: 0; /* Помещаем footer внизу страницы */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/asteroids">Asteroids info</a></li>
+                <li><a href="/apod">NASA</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/adminpanel">Admin Panel</a></li>
+                <li><a href="/logout">Logout</a></li> <!-- Добавлена ссылка для выхода из аккаунта -->
+            </ul>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <h2>User Profile</h2>
+        <div class="profile-info">
+            <label>Username:</label>
+            <p><%= user.username %></p> <!-- Выводим имя пользователя -->
+        </div>
+        <div class="profile-info">
+            <label>Email:</label>
+            <p><%= user.email %></p> <!-- Выводим email пользователя -->
+        </div>
+        <!-- Добавьте дополнительную информацию о пользователе по необходимости -->
+    </div>
+
+    <footer>
+        <p>Aidana Ibrayeva SE-2203</p>
+    </footer>
+</body>
+</html>

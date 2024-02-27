@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<!-- Fontawesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding-bottom: 50px; /* Добавленное пространство внизу страницы для footer */
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            color: #fff;
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+        header nav ul li a:hover {
+            color: #ccc;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 40px;
+        }
+        form {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+      
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px; /* Уменьшаем отступы внутри footer */
+            width: 100%;
+            position: relative; /* Позиционирование footer как обычного блока */
+            clear: both; /* Очищаем float элементов перед footer */
+            bottom: 0; /* Помещаем footer внизу страницы */
+        }
+    </style>
+</head>
+<body class="bg-light vh-100">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/asteroids">Asteroids info</a></li>
+                <li><a href="/apod">NASA</a></li>
+                <li><a href="/news">News</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Signup</a></li>
+                <li><a href="/adminpanel">Admin Panel</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container mt-4">
+    <div class="container">
+
+        <div class="row">
+            <% if (data && data.length > 0) { %>
+                <% data.forEach(function(article) { %>
+                    <div class="col-md-6 mb-4">
+                        <div class="news-item">
+                            <% if(article.image) { %>
+                                <img src="<%= article.image %>" alt="Article Image" class="img-fluid">
+                            <% } %>
+                            <div class="news-content">
+                                <h2><%= article.title %></h2>
+                                <p><%= article.description %></p>
+                                <a href="<%= article.url %>" class="btn btn-primary" target="_blank">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No news available.</p>
+            <% } %>
+        </div>
+    </div>
+    </div>
+    <% if (error) { %>
+        <script>
+            // Отображение сообщения об ошибке при наличии ошибки
+            Swal.fire({
+                title: "An error occurred!",
+                text: "<%= error %>",
+                icon: "error"
+            });
+        </script>
+    <% } %>
+    <footer>
+        <p>Aidana Ibrayeva SE-2203</p>
+    </footer>
+</body>
+</html>
