@@ -3,6 +3,7 @@
 express: Для работы с сервером Express.
 
 npm install express
+npm install ejs
 mongoose: Для работы с MongoDB.
 npm install mongoose
 bcrypt: Для хэширования паролей.
