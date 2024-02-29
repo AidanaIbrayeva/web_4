@@ -2,7 +2,9 @@ const mongoose = require('mongoose');
 
 // Подключение к базе данных MongoDB Atlas
 mongoose.connect('mongodb+srv://Aidana:Aidana17@cluster0.4juvz6h.mongodb.net/?retryWrites=true&w=majority')
-    .then(() => console.log('Connected to MongoDB Atlas!'))
+    .then(() => {console.log('Connected to MongoDB Atlas!')
+    return Image.find();
+    })
     .then(images => {
         if (images.length > 0) {
             console.log('Найдено изображение:', images[0]);
