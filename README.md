@@ -9,7 +9,8 @@ bcrypt: Для хэширования паролей.
 
 npm install bcrypt
 express-session: Для управления сеансами пользователей.
-
+npm install 
+npm install axios
 npm install express-session
 body-parser: Для парсинга тела запроса.
 
@@ -20,7 +21,7 @@ npm install multer
 node-fetch: Для работы с HTTP-запросами.
 npm install node-fetch
 npm install multer
-
+npm install cookie-parser
 
 
 API
